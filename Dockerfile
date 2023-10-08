@@ -4,10 +4,10 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 
 RUN apt-get update \
 && apt-get install -y libopencv-dev \ # OpenCV
-libgoogle-glog-dev\
+libgoogle-glog-dev \
 libeigen3-dev \    #Eigen3
 libsuitesparse-dev \
- libpcl-dev \       #PCL
+libpcl-dev \       #PCL
 libyaml-cpp-dev libbtbb-dev libgmock-dev unzip python3-tk \
 liblapack-dev libcxsparse3 libgflags-dev libgtest-dev #ceres dependences
 
