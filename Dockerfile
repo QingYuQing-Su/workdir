@@ -2,14 +2,14 @@ FROM osrf/ros:noetic-desktop-full
 
 RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 
-RUN apt-get update \
-&& apt-get install -y libopencv-dev \
+RUN apt-get update 
+RUN apt-get install -y libopencv-dev \
 libgoogle-glog-dev \
 libeigen3-dev \
 libsuitesparse-dev \
 libpcl-dev \
 libyaml-cpp-dev libbtbb-dev libgmock-dev unzip python3-tk \
-liblapack-dev libcxsparse3 libgflags-dev libgtest-dev \ #ceres dependences \
+liblapack-dev libcxsparse3 libgflags-dev libgtest-dev \
 
 RUN cd / \
 && mkdir /thirdparty \
