@@ -3,13 +3,13 @@ FROM osrf/ros:noetic-desktop-full
 RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 
 RUN apt-get update \
-&& apt-get install -y libopencv-dev \ # OpenCV
+&& apt-get install -y libopencv-dev \ # OpenCV \
 libgoogle-glog-dev \
-libeigen3-dev \    #Eigen3
+libeigen3-dev \    #Eigen3 \
 libsuitesparse-dev \
-libpcl-dev \       #PCL
+libpcl-dev \       #PCL \
 libyaml-cpp-dev libbtbb-dev libgmock-dev unzip python3-tk \
-liblapack-dev libcxsparse3 libgflags-dev libgtest-dev #ceres dependences
+liblapack-dev libcxsparse3 libgflags-dev libgtest-dev \ #ceres dependences \
 
 RUN mkdir /thirdparty
 RUN mkdir /workdir
@@ -23,13 +23,13 @@ RUN cd /thirdparty \
 && unzip ./Pangolin.zip \
 && mkdir ./Pangolin/build \
 && cmake ./Pangolin -B ./Pangolin/build \
-&& make -j4 -C ./Pangolin/build install \#Pangolin
+&& make -j4 -C ./Pangolin/build install \ #Pangolin \
 && mkdir ./g2o/build \
 && cmake ./g2o -B ./g2o/build \
-&& make -j4 -C ./g2o/build install \  #g2o 
+&& make -j4 -C ./g2o/build install \  #g2o  \
 && mkdir ./ceres/build \
 && cmake ./ceres -B ./Pangolin/build \
-&& make -j4 -C ./ceres/build install \  #ceres 
+&& make -j4 -C ./ceres/build install \  #ceres \
 
 #docker build -t env:v1 .
 
