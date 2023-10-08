@@ -6,9 +6,9 @@ RUN apt-get update \
 && apt-get install -y libopencv-dev \ # OpenCV
 libgoogle-glog-dev\
 libeigen3-dev \    #Eigen3
-libsuitesparse-dev\
+libsuitesparse-dev \
  libpcl-dev \       #PCL
-libyaml-cpp-dev libbtbb-dev libgmock-dev unzip python3-tk\
+libyaml-cpp-dev libbtbb-dev libgmock-dev unzip python3-tk \
 liblapack-dev libcxsparse3 libgflags-dev libgtest-dev #ceres dependences
 
 RUN mkdir /thirdparty
